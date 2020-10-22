@@ -9,7 +9,7 @@ Demonstrates the laws of reflection and refraction using VPython.
 ## General Info
 This demo file calculates the paths of light rays travelling through different media using the laws of reflection and refraction:
 1. incident angle = reflected angle
-2. incident index x sin(incident angle) = transmitted index x sin(transmitted angle) ,  
+2. incident index  x  sin(incident angle) = transmitted index  x  sin(transmitted angle) ,  
 
 where incident angle is the angle of the incident light ray, reflected angle is the angle of the reflected light ray, transmitted angle is the angle of the transmitted light ray, incident index is the refractive index of the medium containing the incident light ray, and  transmitted index is the refractive index of the medium containing the transmitted light ray (all angles are measured from the normal).  
 
