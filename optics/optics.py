@@ -14,22 +14,23 @@ class Optics:
     """ Collection of functions for geometric optics that determine the orientation of light rays.
 
     Instance Attributes:
-        incident_angle: The angle of the incident light ray in units of degrees (0 <= angle <= 90).
-        incident_index: Refractive index of the incident medium
+        incident_angle: (float) The angle of the incident light ray in units of degrees (0 <= angle <= 90).
+        incident_index: (float) Refractive index of the incident medium
         (speed of light in vacuum / speed of light in incident medium).
-        transmitted_index: Refractive index of transmitted medium
+        transmitted_index: (float) Refractive index of transmitted medium
         (speed of light in vacuum / speed of light in transmitted medium).
-        parallel: True if electric field is parallel to the plane of incidence, False if not (default is False).
+        parallel: (bool) True if electric field is parallel to the plane of incidence, False if not (default is False).
     """
 
     def __init__(self, incident_angle, incident_index, transmitted_index, parallel=False):
         """
-        :param incident_angle: The angle of the incident light ray in units of degrees (0 <= angle <= 90).
-        :param incident_index: Refractive index of incident medium
+        :param incident_angle: (float) The angle of the incident light ray in units of degrees (0 <= angle <= 90).
+        :param incident_index: (float) Refractive index of incident medium
         (speed of light in vacuum / speed of light in incident medium).
-        :param transmitted_index: Refractive index of transmitted medium
+        :param transmitted_index: (float) Refractive index of transmitted medium
         (speed of light in vacuum / speed of light in transmitted medium).
-        :param parallel: True if electric field is parallel to the plane of incidence, False if not (default is False).
+        :param parallel: (bool) True if electric field is parallel to the plane of incidence, False if not
+        (default is False).
         """
 
         self._incident_angle = incident_angle
@@ -64,7 +65,7 @@ class Optics:
     def transmitted_angle(self):
         """ Calculates the transmitted angle using Snell's Law / the Law of Refraction.
 
-        :return: The transmitted angle in radians.
+        :return: (float) The transmitted angle in radians.
         """
 
         return math.asin(self.incident_index/self.transmitted_index*math.sin(self.incident_angle))
@@ -73,7 +74,7 @@ class Optics:
     def critical_angle(self):
         """ Determines the critical angle of the incident light ray, if any.
 
-        :return: Returns the critical angle in radians; if no critical angle, returns pi/2 radians.
+        :return: (float) Returns the critical angle in radians; if no critical angle, returns pi/2 radians.
         """
 
         if self.incident_index > self.transmitted_index:
@@ -87,7 +88,7 @@ class Optics:
         the reflection and transmission amplitude coefficients of the electric field using the Fresnel equations
         (parallel or perpendicular to the plane of incidence.
 
-        :return: Reflectance, Transmittance.
+        :return: (list) Reflectance, Transmittance.
         """
         
         if self.incident_angle >= self.critical_angle:
@@ -124,7 +125,7 @@ class Optics:
     def rays(self):
         """ Determines the start and end positions of all the three light rays.
 
-        :return: Incident, reflected, and transmitted light ray start and end positions.
+        :return: (list) Incident, reflected, and transmitted light ray start and end positions.
         """
 
         origin = vector(0, 0, 0)
@@ -146,8 +147,8 @@ class Optics:
     def ray_position(angle):
         """ Calculates the end position of the ray with the start assumed to be at the origin.
 
-        :param angle: The desired angle in radians.
-        :return: The end position of the ray in cartesian coordinates.
+        :param angle: (float) The desired angle in radians.
+        :return: (VPython vector) The end position of the ray in cartesian coordinates.
         """
 
         return vector(math.cos(math.pi/2 - angle), math.sin(math.pi/2 - angle), 0)

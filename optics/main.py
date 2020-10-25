@@ -19,20 +19,22 @@ def main(incident_angle, incident_index, transmitted_index, parallel=False, labe
     """ A geometric optics demo that visualizes the laws of reflection and refraction while also providing
     the option of visualizing reflectance and transmittance.
 
-    :param incident_angle: The angle of the incident light ray in units of degrees (0 <= angle <= 90).
-    :param incident_index: Refractive index of incident medium
+    :param incident_angle: (float) The angle of the incident light ray in units of degrees (0 <= angle <= 90).
+    :param incident_index: (float) Refractive index of incident medium
     (speed of light in vacuum / speed of light in incident medium).
-    :param transmitted_index: Refractive index of transmitted medium
+    :param transmitted_index: (float) Refractive index of transmitted medium
     (speed of light in vacuum / speed of light in transmitted medium).
-    :param parallel: True if electric field is parallel to the plane of incidence and False if not (default is False).
-    :param labels: True if you want to display boxes containing important values (default is True).
-    :param irradiance: True if you want to visualize the reflectance and transmittance of the light (default is True).
-    :param incident_medium: The label for the incident medium; must be a string (default is '').
-    :param transmitted_medium: The label for the transmitted medium; must be a string (default is '').
-    :param display_width: VPython canvas width (default is 1900).
-    :param display_height: VPython canvas height (default is 950).
-    :param animate: If true, will animate the light rays through a range of angles (default is False).
-    :param angle_range: A tuple that represents the start, end, and step size angles that you wish to animate in
+    :param parallel: (bool) True if electric field is parallel to the plane of incidence and False if not
+    (default is False).
+    :param labels: (bool) True if you want to display boxes containing important values (default is True).
+    :param irradiance: (bool) True if you want to visualize the reflectance and transmittance of the light
+    (default is True).
+    :param incident_medium: (str) The label for the incident medium; must be a string (default is '').
+    :param transmitted_medium: (str) The label for the transmitted medium; must be a string (default is '').
+    :param display_width: (int) VPython canvas width (default is 1900).
+    :param display_height: (int) VPython canvas height (default is 950).
+    :param animate: (bool) If true, will animate the light rays through a range of angles (default is False).
+    :param angle_range: (lsit) A tuple that represents the start, end, and step size angles that you wish to animate in
     degrees; will override the incident_angle value given; should only be within the range of 0 to 90
     (default is (0, 90, 10)).
     """
