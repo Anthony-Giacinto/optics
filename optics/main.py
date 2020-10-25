@@ -9,8 +9,8 @@ Functions:
 
 import math
 from vpython import canvas, vector, box, color, curve, label
-from optics.medium import Air, Glass
-from optics import Optics
+from .medium import Air, Glass
+from .optics import Optics
 
 
 def main(incident_angle, incident_index, transmitted_index, parallel=False, labels=True, irradiance=True,
@@ -128,5 +128,5 @@ def main(incident_angle, incident_index, transmitted_index, parallel=False, labe
 
 
 if __name__ == '__main__':
-    main(incident_angle=80, incident_index=Air.index, transmitted_index=Glass.index, incident_medium=Air.name,
-         transmitted_medium=Glass.name, animate=True, irradiance=True, angle_range=(0, 90, 10))
+    main(incident_angle=50, incident_index=Air.index, transmitted_index=Glass.index, incident_medium=Air.name,
+         transmitted_medium=Glass.name, animate=False, irradiance=True, angle_range=(0, 90, 10))

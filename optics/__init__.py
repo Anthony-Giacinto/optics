@@ -1,3 +1,5 @@
-from optics.medium import Vacuum, Air, Ice, Water, Sapphire, Diamond
-from optics.optics import Optics
-import optics.main
+from .medium import *
+from .optics import Optics
+from .main import main
+
+__all__ = ['main', 'Vacuum', 'Air', 'Ice', 'Water', 'Glass', 'Sapphire', 'Diamond']
