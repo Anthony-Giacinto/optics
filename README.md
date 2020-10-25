@@ -22,17 +22,17 @@ Project was created with:
 * Python 3.6
 
 ## How to Use
-All you need to do is run optics.main.  
+All you need to do is 'from optics import optics   optics.main()'.  
 Here are the arguments for main:
-* incident_angle: The angle of the incident light ray in units of degrees (0 <= angle <= 90).
-* incident_index: Refractive index of incident medium (speed of light in vacuum / speed of light in incident medium).
-* transmitted_index: Refractive index of transmitted medium (speed of light in vacuum / speed of light in transmitted medium).
-* parallel: True if electric field is parallel to the plane of incidence and False if not (default is False).
-* labels: True if you want to display boxes containing important values (default is True).
-* irradiance: True if you want to visualize the reflectance and transmittance of the light (default is True).
-* incident_medium: The label for the incident medium; must be a string (default is '').
-* transmitted_medium: The label for the transmitted medium; must be a string (default is '').
-* display_width: VPython canvas width (default is 1900).
-* display_height: VPython canvas height (default is 950).
-* animate: If true, will animate the light rays through a range of angles (default is False).
-* angle_range: A tuple that represents the start, end, and step size angles that you wish to animate in degrees; will override the incident_angle value given; should only be within the range of 0 to 90 (default is (0, 90, 10)).
+* incident_angle: (float) The angle of the incident light ray in units of degrees (0 <= angle <= 90).
+* incident_index: (float) Refractive index of incident medium (speed of light in vacuum / speed of light in incident medium).
+* transmitted_index: (float) Refractive index of transmitted medium (speed of light in vacuum / speed of light in transmitted medium).
+* parallel: (bool) True if electric field is parallel to the plane of incidence and False if not (default is False).
+* labels: (bool) True if you want to display boxes containing important values (default is True).
+* irradiance: (bool) True if you want to visualize the reflectance and transmittance of the light (default is True).
+* incident_medium: (str) The label for the incident medium; must be a string (default is '').
+* transmitted_medium: (str) The label for the transmitted medium; must be a string (default is '').
+* display_width: (int) VPython canvas width (default is 1900).
+* display_height: (int) VPython canvas height (default is 950).
+* animate: (bool) If true, will animate the light rays through a range of angles (default is False).
+* angle_range: (lsit) A tuple that represents the start, end, and step size angles that you wish to animate in degrees; will override the incident_angle value given; should only be within the range of 0 to 90 (default is (0, 90, 10)).
